@@ -1,0 +1,23 @@
+for webpack encore
+
+first install by using composer
+    - composer require symfony/webpack-encore-bundle
+
+    then run the commands below
+
+        * npm install
+        * npm run dev
+
+        * composer require symfony/asset
+
+        * npm run watch
+
+        to install Tailwind CSS run the command below:
+            * npm install -D tailwindcss postcss-load purgecss-webpack-plugin glob-all path
+            * npx tailwindcss init -p
+            
+            now let's override app.CSS
+            * npx tailwindcss -i ./assets/styles/app.css -o ./public/build/app.css --watch
+
+            install file-loader
+            * npm install file-loader --save-dev
