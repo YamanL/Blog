@@ -71,7 +71,7 @@ class MoviesController extends AbstractController
         ]);
     }
 
-    #[Route('/movies/edit/{id}', name: 'edit_movie')]
+    #[Route('/movies/edit/{id}', name: 'edit_movie_blog')]
     public function edit($id, Request $request): Response
     {
         // $this->checkLoggedInUser($id);
@@ -122,7 +122,7 @@ class MoviesController extends AbstractController
         ]);
     }
 
-    #[Route("/movies/delete/{id}", methods: ['GET', 'DELETE'], name: "delete_movie")]
+    #[Route("/movies/delete/{id}", methods: ['GET', 'DELETE'], name: "delete")]
     public function delete($id): Response
     {
         $movie = $this->movieRepository->find($id);
@@ -141,51 +141,6 @@ class MoviesController extends AbstractController
             'movie' => $movie
         ]);
     }
-    // private $em;
-    // public function __construct(EntityManagerInterface $em)
-    // {
-    //     $this->em = $em;
-    // }
-    // #[Route('/movies', name: 'movies')]
-    // public function index(): Response
-    // {
-    //     // findAll() - SELECT * FROM movies;
-    //     // find() - SELECT * from movies WHERE id = 5;
-    //     // findBy() - SELECT * from movies ORDER BY id DESC
-    //     // findOneBY() = SELECT * FROM movies WHERE id = 11 AND title = 'The Dark Knight' ORDER BY id DESC
-    //     // count() - SELECT count() from movies WHERE id = 11
 
-    //     // $repository = $this->em->getRepository(Movie::class);
 
-    //     // $movies = $repository->getClassName();
-
-    //     // dd($movies);
-
-    //     return $this->render('index.html.twig');
-    // }
-
-    // // for routing tutorial
-    // // #[Route('/movies/{name}', name: 'movies', defaults: ['name' => 'no movies found'], methods: ['GET', 'HEAD'])] // inception can be {id} or {slug} or {name} or any field you want from ENTITY // can set defaults parameter into null datatype; I prefered string
-    // // public function index($name): JsonResponse
-    // // {
-    // //     return $this->json([
-    // //         'Name of the movie' => $name,
-    // //         'message' => 'Welcome to the MOVIE controller!',
-    // //         'path' => 'src/Controller/MoviesController.php',
-    // //     ]);
-    // // }
-
-    // // /**
-    // //  * oldMethod
-    // //  *
-    // //  * @Route("/old", name="old")
-    // //  */
-    // // public function oldMethod(): Response
-    // // {
-    // //     //after writing a public function press shift+ctrl+I; this will create the annotation
-    // //     return $this->json([
-    // //         'message' => 'Old Method!',
-    // //         'path' => 'src/Controller/MoviesController.php',
-    // //     ]);
-    // // }
-}
+    }
